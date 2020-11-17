@@ -34,8 +34,7 @@ public:
      void atarashii(T mensaje,T emisor,T fecha){
          Node *nuevo_Node=new Node();
          nuevo_Node->mensaje=mensaje;
-         nuevo_Node->emisor=emisor;
-         nuevo_Node->fecha = fecha;
+
          nuevo_Node->siguiente = pila;
          pila= nuevo_Node;
      }
@@ -49,7 +48,7 @@ public:
          }
         return todoElPosteo;
      }
-     void postAnterior(){
+   /*  void postAnterior(){
          string emisor, mensaje,fecha;
          string nombreArchivo="posts.bin";
          ifstream archivo(nombreArchivo);
@@ -67,7 +66,7 @@ public:
          registro.close();
 
      }
-
+*/
 
 
 };

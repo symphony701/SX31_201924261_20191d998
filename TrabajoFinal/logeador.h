@@ -14,10 +14,10 @@
 #include <math.h>
 using namespace std;
 class login{
-    Lista *arreglo;
+    Lista<User> *arreglo;
 public:
     login(){
-        arreglo=new Lista[20];
+        arreglo=new Lista<User>[20];
         hasheabilador(arreglo);
 
 
@@ -36,7 +36,7 @@ public:
     int hash3(string nick){
       return hash2(nick) % nick.length();
     }
-    Lista *getArreglo(){
+    Lista<User> *getArreglo(){
         return arreglo;
     }
 
@@ -46,7 +46,7 @@ public:
 
 
 
-      void hasheabilador(Lista arreglo[]){
+      void hasheabilador(Lista<User> arreglo[]){
       string nick,mail,fecha;
       string numero,teki;
        string prueba="Probando";
@@ -61,9 +61,6 @@ public:
             nick.erase(nick.begin());
             nick.erase(nick.length()-1);
             arreglo[hash3(nick)].atarashii(new User(nick,mail,atoi(numero.c_str()),fecha));
-            qDebug() << atoi(numero.c_str());
-
-
 
         }
 

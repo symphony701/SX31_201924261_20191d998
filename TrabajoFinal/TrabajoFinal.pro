@@ -18,12 +18,15 @@ SOURCES += \
 HEADERS += \
     Lista.h \
     Pilas.h \
+    Publi.h \
     User.h \
     error.h \
     formperfil.h \
     formprincipal.h \
+    lectorPub.h \
     logeador.h \
-    mainwindow.h
+    mainwindow.h \
+    orderPubs.h
 
 FORMS += \
     FormError.ui \
