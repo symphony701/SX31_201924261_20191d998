@@ -4,6 +4,7 @@
 #include <fstream>
 #include <vector>
 #include "Publi.h"
+#include <QDebug>
 using namespace std;
 class lector{
 private:
@@ -11,31 +12,30 @@ private:
 public:
     lector(){
         arrPub=new vector<Publicacion>;
-
+        leer();
     }
 
+    Publicacion getPublicacion(int n){
+        return arrPub->at(n);
+    }
+
+    int getSize(){return arrPub->size();}
     void leer(){
         string idPub,idUser,likes;
         string content,fecha,content2;
         string aux;
          //string prueba="Probando";
-        ifstream dataUser("publications.txt");
-          while(getline(dataUser,aux,',')){
-              getline(dataUser,idPub,',');
-              getline(dataUser,idUser,',');
-              getline(dataUser,content,':');
-              getline(dataUser,aux,',');
-              getline(dataUser,content2,',');
-              getline(dataUser,fecha,',');
+        ifstream dataUser("publications.tsv");
+          while(getline(dataUser,aux,'\t')){
+              getline(dataUser,idPub,'\t');
+              getline(dataUser,idUser,'\t');
+              getline(dataUser,content,'\t');
+              getline(dataUser,content2,'\t');
+              getline(dataUser,fecha,'\t');
               getline(dataUser,likes);
-
-              content.erase(content.length()-1);
-              content.erase(content.length()-1);
-              content.erase(content.length()-1);
-              content.erase(content.length()-1);
-              content.erase(content.length()-1);
              Publicacion uwu(atoi(idPub.c_str()),atoi(idUser.c_str()),content,atoi(likes.c_str()),fecha,content2);
               arrPub->push_back(uwu);
+
            }
         }
   };

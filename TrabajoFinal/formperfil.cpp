@@ -14,6 +14,7 @@ FormPerfil::FormPerfil(QWidget *parent,QString Persona) :
     //font-size:24pt
     ui->lbl_followers->setText("Followers: ");
 
+
 }
 
 FormPerfil::~FormPerfil()

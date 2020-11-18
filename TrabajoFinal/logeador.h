@@ -50,16 +50,13 @@ public:
       string nick,mail,fecha;
       string numero,teki;
        string prueba="Probando";
-      ifstream dataUser("users.txt");
-        while(getline(dataUser,teki,',')){
-            getline(dataUser,numero,',');
-            getline(dataUser,mail,',');
-            getline(dataUser,nick,',');
+      ifstream dataUser("users.tsv");
+        while(getline(dataUser,numero,'\t')){
+
+            getline(dataUser,mail,'\t');
+            getline(dataUser,nick,'\t');
             getline(dataUser,fecha);
-            nick.erase(nick.begin());
-            nick.erase(nick.length()-1);
-            nick.erase(nick.begin());
-            nick.erase(nick.length()-1);
+
             arreglo[hash3(nick)].atarashii(new User(nick,mail,atoi(numero.c_str()),fecha));
 
         }

@@ -5,6 +5,7 @@
 #include "Lista.h"
 #include "logeador.h"
 #include "User.h"
+#include "lectorPub.h"
 namespace Ui {
 class FormPrincipal;
 }
@@ -22,6 +23,7 @@ private slots:
 
 private:
     Ui::FormPrincipal *ui;
+    lector *lec;
 
 };
 
