@@ -28,7 +28,7 @@ public:
         Error->resize(295, 203);
         label = new QLabel(Error);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(140, 90, 47, 13));
+        label->setGeometry(QRect(60, 90, 201, 20));
 
         retranslateUi(Error);
 
@@ -38,7 +38,7 @@ public:
     void retranslateUi(QWidget *Error)
     {
         Error->setWindowTitle(QCoreApplication::translate("Error", "Form", nullptr));
-        label->setText(QCoreApplication::translate("Error", "ERROR", nullptr));
+        label->setText(QCoreApplication::translate("Error", "ERROR USUARIO NO ENCONTRADO", nullptr));
     } // retranslateUi
 
 };

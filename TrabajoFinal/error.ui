@@ -16,14 +16,14 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>60</x>
      <y>90</y>
-     <width>47</width>
-     <height>13</height>
+     <width>201</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>ERROR</string>
+    <string>ERROR USUARIO NO ENCONTRADO</string>
    </property>
   </widget>
  </widget>

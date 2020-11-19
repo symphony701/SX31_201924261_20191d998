@@ -16,10 +16,14 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    Arbol.h \
+    Followers.h \
+    Graficador.h \
     Lista.h \
     Pilas.h \
     Publi.h \
     User.h \
+    busquedaBinariaUsuarios.h \
     error.h \
     formperfil.h \
     formprincipal.h \

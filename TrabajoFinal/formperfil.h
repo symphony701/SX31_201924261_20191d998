@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "logeador.h"
+#include "User.h"
 
 namespace Ui {
 class FormPerfil;
@@ -13,13 +14,12 @@ class FormPerfil : public QWidget
     Q_OBJECT
 
 public:
-    explicit FormPerfil(QWidget *parent = nullptr,QString Persona="");
+    explicit FormPerfil(QWidget *parent = nullptr,User *Persona=nullptr);
     ~FormPerfil();
 
 private:
     Ui::FormPerfil *ui;
-    login *log;
-    User *perfil;
+
 };
 
 #endif // FORMPERFIL_H

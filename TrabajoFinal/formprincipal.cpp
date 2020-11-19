@@ -7,52 +7,22 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QPushButton>
+#include "User.h"
+#include "busquedaBinariaUsuarios.h"
+#include "Graficador.h"
+#include "logeador.h"
+#include "error.h"
 FormPrincipal::FormPrincipal(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FormPrincipal)
 {
     ui->setupUi(this);
-    lec = new lector();
+    grafica = new Graphics();
+
     QGridLayout * lay = new QGridLayout(this);
-    QGroupBox *pub[lec->getSize()];
-    for (int i=0;i<lec->getSize() ;++i ) {
-        pub[i]=new QGroupBox();
-        QVBoxLayout *vbox = new QVBoxLayout;
-
-        QLabel *conten= new QLabel;
-        QLabel *content2= new QLabel;
-        QLabel *persona = new QLabel;
-
-        conten->setText(QString::fromStdString(lec->getPublicacion(i).getContent()));
-        content2->setText("#"+QString::fromStdString(lec->getPublicacion(i).getContent2()));
-       // persona->setText(QString::fromStdString(lec->getPublicacion(i).getContent()));
-        vbox->addWidget(conten);
-        vbox->addWidget(content2);
-
-        //QHBoxLayout* inter = new QHBoxLayout;
-
-        QPushButton *BLike = new QPushButton("Like");
-        QPushButton *BComment = new QPushButton("Comment");
-
-        vbox->addWidget(BLike);
-        vbox->addWidget(BComment);
-
-        pub[i]->setLayout(vbox);
-
-
-        QFrame *line= new QFrame();
-        line->setFrameShape(QFrame::HLine);
-        line->setFrameShadow(QFrame::Sunken);
-        line->setStyleSheet("background:black");
-        lay->addWidget(pub[i]);
-
-        lay->addWidget(line);
-
-    }
+    grafica->dibujarInicio(lay);
 
     ui->scrollAreaWidgetContents_3->setLayout(lay);
-
-
 
 
 
@@ -65,6 +35,18 @@ FormPrincipal::~FormPrincipal()
 
 void FormPrincipal::on_ButtonPerfil_clicked()
 {
-    FormPerfil *perfil=new FormPerfil(nullptr,ui->lineID->text());
-    perfil->show();
+    login *log = new login();
+    if(log->validadorUsuario(ui->lineID->text().toStdString())){
+        User *person = log->persona(ui->lineID->text().toStdString());
+        FormPerfil *perfil=new FormPerfil(nullptr,person);
+        perfil->show();
+    }else{
+        Error* formerror= new Error();
+        formerror->show();
+    }
+
+
+
+
+
 }

@@ -24,7 +24,7 @@ public:
         string idPub,idUser,likes;
         string content,fecha,content2;
         string aux;
-         //string prueba="Probando";
+
         ifstream dataUser("publications.tsv");
           while(getline(dataUser,aux,'\t')){
               getline(dataUser,idPub,'\t');

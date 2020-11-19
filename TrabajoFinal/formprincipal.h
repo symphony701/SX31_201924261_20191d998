@@ -6,6 +6,8 @@
 #include "logeador.h"
 #include "User.h"
 #include "lectorPub.h"
+#include "busquedaBinariaUsuarios.h"
+#include "Graficador.h"
 namespace Ui {
 class FormPrincipal;
 }
@@ -24,6 +26,8 @@ private slots:
 private:
     Ui::FormPrincipal *ui;
     lector *lec;
+    bs<User>*search;
+    Graphics* grafica;
 
 };
 

@@ -91,15 +91,6 @@ public:
         return nullptr;
     }
 
-    //int getSize(){return size;}
-
-
-
-
-
-
-
-
 
     void furui(){
         Nodo<T> * ulti = new Nodo<T>();

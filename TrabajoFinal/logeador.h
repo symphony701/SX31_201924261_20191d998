@@ -49,7 +49,7 @@ public:
       void hasheabilador(Lista<User> arreglo[]){
       string nick,mail,fecha;
       string numero,teki;
-       string prueba="Probando";
+      string prueba="Probando";
       ifstream dataUser("users.tsv");
         while(getline(dataUser,numero,'\t')){
 
