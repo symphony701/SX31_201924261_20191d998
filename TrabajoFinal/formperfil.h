@@ -4,7 +4,7 @@
 #include <QWidget>
 #include "logeador.h"
 #include "User.h"
-
+#include "Followers.h"
 namespace Ui {
 class FormPerfil;
 }
@@ -19,6 +19,7 @@ public:
 
 private:
     Ui::FormPerfil *ui;
+    Follow *followers;
 
 };
 

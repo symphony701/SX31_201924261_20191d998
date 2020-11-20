@@ -10,7 +10,8 @@ using namespace std;
 
 template <class T>
 class bs{
-    vector<User*> arrUser;
+    //si falla aqui esta el error xd
+    vector<T*> arrUser;
 public:
     bs(){
         lector();
