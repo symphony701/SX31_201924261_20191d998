@@ -73,7 +73,7 @@ public:
     }
 
     void dibujarSeguidores(QGridLayout * lay2){
-         qDebug()<<"Estoy por llorar";
+
          QPushButton *sad[cantidadSeguidos];
          seguidores->Shiranai(sad,lay2);
     }
