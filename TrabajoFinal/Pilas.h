@@ -40,11 +40,12 @@ public:
          pila= nuevo_Node;
      }
      T miru(){
-         T todoElPosteo="";
+         QString todoElPosteo="";
          Node<T> *aux;
          aux=pila;
          while (aux!=NULL) {
-             todoElPosteo=todoElPosteo+aux->fecha+": \n"+aux->emisor+": "+aux->mensaje+"\n\n";
+             //todoElPosteo=todoElPosteo+QString::fromStdString(aux->dato->nick)+": \n"+QString::fromStdString(aux->dato->mail)+": "+QString::number(aux->dato->nro)+"\n\n";
+            // qDebug()<<aux->dato->nick;
              aux=aux->siguiente;
          }
         return todoElPosteo;

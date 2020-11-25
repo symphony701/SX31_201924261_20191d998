@@ -13,14 +13,13 @@
 #include <QPushButton>
 
 class Follow{
-    Pila<User> *seguidores;
-    Pila<User> *seguidos;
+    Pila<User>* seguidores;
+    Pila<User>* seguidos;
     bs<User> * usuarios;
     int cantidadSeguidores;
     int cantidadSeguidos;
 public:
     Follow(User*Persona){
-        // qDebug()<<"Wahts happen?";
         cantidadSeguidores=0;
         cantidadSeguidos=0;
 
@@ -40,27 +39,18 @@ public:
 
             //seguidores
             if(atoi(idf.c_str())==actual->getNro()){
-                seguidos->atarashii(usuarios->returnBs(atoi(idu.c_str())));
+                seguidores->atarashii(usuarios->returnBs(atoi(idu.c_str())));
                 cantidadSeguidores++;
-                qDebug()<<"Otro seguidor";
             }
-
 
             //seguidos
             if(atoi(idu.c_str())==actual->getNro()){
                 seguidos->atarashii(usuarios->returnBs(atoi(idf.c_str())));
                 cantidadSeguidos++;
-                qDebug()<<"Otro seguido";
+            }
 
-            }
-            //seguidores
-            if(atoi(idf.c_str())==actual->getNro()){
-                seguidos->atarashii(usuarios->returnBs(atoi(idu.c_str())));
-                cantidadSeguidores++;
-                qDebug()<<"Otro seguidor";
-            }
         }
-        // qDebug()<<"No entre al wile";
+
     }
 
     int getNroSeguidores(){return cantidadSeguidores;}
@@ -73,12 +63,10 @@ public:
     }
 
     void dibujarSeguidores(QGridLayout * lay2){
-
-         QPushButton *sad[cantidadSeguidos];
+             qDebug()<<cantidadSeguidores;
+         QPushButton *sad[cantidadSeguidores];
          seguidores->Shiranai(sad,lay2);
+        // qDebug()<<getNroSeguidores();
+
     }
-
-
-
-
 };
