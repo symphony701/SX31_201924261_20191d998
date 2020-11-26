@@ -30,6 +30,8 @@ private slots:
 
     void on_radioButton_clicked();
 
+    void on_ButtonPerfil_2_clicked();
+
 private:
     Ui::FormPrincipal *ui;
     lector *lec;

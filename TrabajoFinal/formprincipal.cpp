@@ -88,3 +88,14 @@ void FormPrincipal::on_radioButton_clicked()
         areaVisible->setLayout(lay);
         ui->scrollPubs->setWidget(areaVisible);
 }
+
+void FormPrincipal::on_ButtonPerfil_2_clicked()
+{
+    QWidget *variable = ui->scrollPubs->widget();
+    if(variable){variable->deleteLater();}
+    QGridLayout * lay = new QGridLayout();
+    grafica->dibujarKeyWord(lay,ui->lineID_2->text().toStdString());
+    QWidget *areaVisible= new QWidget();
+    areaVisible->setLayout(lay);
+    ui->scrollPubs->setWidget(areaVisible);
+}

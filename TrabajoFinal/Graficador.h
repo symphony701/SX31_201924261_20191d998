@@ -184,4 +184,15 @@ public:
 
     }
 
+
+
+    void dibujarKeyWord(QGridLayout * lay,string KeyWord){
+        lec->findWord(lay,KeyWord);
+    }
+
+
+
+
+
+
 };
