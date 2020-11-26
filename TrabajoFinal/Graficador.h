@@ -19,6 +19,10 @@ public:
         lec = new lector();
         search = new bs<User>();
     }
+    Graphics(string owo){
+        lec = new lector(owo);
+        search = new bs<User>();
+    }
 
     void dibujarFechaPos(QGridLayout * lay){
        // QGridLayout * lay = new QGridLayout(this);
@@ -158,7 +162,7 @@ public:
                             QString::fromStdString(lec->getPubLikes(i).getFecha()));
 
            conten->setText(QString::fromStdString(lec->getPubLikes(i).getContent()));
-                qDebug()<<QString::fromStdString(lec->getPubLikes(i).getContent());
+                //qDebug()<<QString::fromStdString(lec->getPubLikes(i).getContent());
             content2->setText("#"+QString::fromStdString(lec->getPubLikes(i).getContent2()));
             vbox->addWidget(persona);
             vbox->addWidget(conten);

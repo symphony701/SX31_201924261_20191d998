@@ -356,6 +356,9 @@ release/moc_formperfil.cpp: formperfil.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtCore/qfiledevice.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtGui/qvector2d.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtGui/qtouchdevice.h \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QLabel \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qframe.h \
 		logeador.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtCore/QObject \
 		../../../Qt/5.15.0/mingw81_64/include/QtCore/QString \
@@ -381,11 +384,12 @@ release/moc_formperfil.cpp: formperfil.h \
 		busquedaBinariaUsuarios.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QGroupBox \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qgroupbox.h \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QLabel \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qlabel.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QVBoxLayout \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QHBoxLayout \
+		Graficador.h \
+		lectorPub.h \
+		Publi.h \
+		Arbol.h \
 		release/moc_predefs.h \
 		../../../Qt/5.15.0/mingw81_64/bin/moc.exe
 	D:\Qt\5.15.0\mingw81_64\bin\moc.exe $(DEFINES) --include D:/GitHub/TrabajoFinalAED/TrabajoFinal/release/moc_predefs.h -ID:/Qt/5.15.0/mingw81_64/mkspecs/win32-g++ -ID:/GitHub/TrabajoFinalAED/TrabajoFinal -ID:/Qt/5.15.0/mingw81_64/include -ID:/Qt/5.15.0/mingw81_64/include/QtWidgets -ID:/Qt/5.15.0/mingw81_64/include/QtGui -ID:/Qt/5.15.0/mingw81_64/include/QtANGLE -ID:/Qt/5.15.0/mingw81_64/include/QtCore -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include formperfil.h -o release\moc_formperfil.cpp
@@ -502,6 +506,9 @@ release/moc_formprincipal.cpp: formprincipal.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
 		User.h \
 		logeador.h \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QLabel \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qframe.h \
 		lectorPub.h \
 		Publi.h \
 		Arbol.h \
@@ -513,9 +520,6 @@ release/moc_formprincipal.cpp: formprincipal.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qboxlayout.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QGroupBox \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qgroupbox.h \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QLabel \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qlabel.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QVBoxLayout \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QHBoxLayout \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QPushButton \
@@ -1009,6 +1013,9 @@ release/formperfil.o: formperfil.cpp formperfil.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtCore/qfiledevice.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtGui/qvector2d.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtGui/qtouchdevice.h \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QLabel \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qframe.h \
 		logeador.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtCore/QObject \
 		../../../Qt/5.15.0/mingw81_64/include/QtCore/QString \
@@ -1034,11 +1041,12 @@ release/formperfil.o: formperfil.cpp formperfil.h \
 		busquedaBinariaUsuarios.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QGroupBox \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qgroupbox.h \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QLabel \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qlabel.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QVBoxLayout \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QHBoxLayout \
+		Graficador.h \
+		lectorPub.h \
+		Publi.h \
+		Arbol.h \
 		ui_formperfil.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\formperfil.o formperfil.cpp
 
@@ -1154,6 +1162,9 @@ release/formprincipal.o: formprincipal.cpp formprincipal.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
 		User.h \
 		logeador.h \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QLabel \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qframe.h \
 		lectorPub.h \
 		Publi.h \
 		Arbol.h \
@@ -1165,9 +1176,6 @@ release/formprincipal.o: formprincipal.cpp formprincipal.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qboxlayout.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QGroupBox \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qgroupbox.h \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QLabel \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qlabel.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QVBoxLayout \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QHBoxLayout \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QPushButton \
@@ -1536,6 +1544,9 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		ui_mainwindow.h \
 		formprincipal.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QWidget \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QLabel \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qframe.h \
 		lectorPub.h \
 		Publi.h \
 		Arbol.h \
@@ -1547,9 +1558,6 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qboxlayout.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QGroupBox \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qgroupbox.h \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QLabel \
-		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/qlabel.h \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QVBoxLayout \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QHBoxLayout \
 		../../../Qt/5.15.0/mingw81_64/include/QtWidgets/QPushButton \

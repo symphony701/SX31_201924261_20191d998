@@ -15,6 +15,7 @@
 #include <QWidget>
 #include "busquedaBinariaUsuarios.h"
 #include "User.h"
+#include "logeador.h"
 
 using namespace std;
 
@@ -29,6 +30,8 @@ private:
     Tree<Publicacion>*Likes;
     vector<Publicacion> * vectoFind;
     bs<User>*search;
+    login *log;
+    int id;
 
 public:
     lector(){
@@ -38,6 +41,26 @@ public:
         arrPub=new vector<Publicacion>;
         search = new bs<User>();
         leer();
+        fechaAscendente();
+        fechaDescendente();
+        porLikes();
+        fechaAs->wakarimasen();
+
+        Likes->wakarimasen();
+        fechaDes->wakarimasen();
+
+    }
+   lector(string Buscado){
+        fechaAs = new Tree<Publicacion>();
+        fechaDes = new Tree<Publicacion>();
+        Likes = new Tree<Publicacion>();
+        arrPub=new vector<Publicacion>;
+        search = new bs<User>();
+        log= new login();
+        id=log->getIdPersona(Buscado);
+
+        leer2();
+
         fechaAscendente();
         fechaDescendente();
         porLikes();
@@ -95,6 +118,38 @@ public:
     int getSize(){return arrPub->size();}
 
     //----Lector de archivo----
+    void leer2(){
+        string idPub,idUser,likes;
+        string content,fecha,content2;
+        string aux;
+
+        ifstream dataUser("publications.tsv");
+          while(getline(dataUser,aux,'\t')){
+              getline(dataUser,idPub,'\t');
+              getline(dataUser,idUser,'\t');
+              getline(dataUser,content,'\t');
+              getline(dataUser,content2,'\t');
+              getline(dataUser,fecha,'\t');
+              getline(dataUser,likes);
+
+              string owo="";
+              int le= fecha.size();
+              for(int i=0;i<le;++i){
+                  if(fecha[i]!='-'){
+                      owo=owo+fecha[i];
+                  }
+              }
+
+              //qDebug()<<QString::fromStdString(owo);
+
+             if(atoi(idUser.c_str())==id){
+                 Publicacion uwu(atoi(idPub.c_str()),atoi(idUser.c_str()),content,atoi(likes.c_str()),fecha,content2,atoi(owo.c_str()));
+                  arrPub->push_back(uwu);
+             }
+
+
+           }
+        }
     void leer(){
         string idPub,idUser,likes;
         string content,fecha,content2;
@@ -122,7 +177,7 @@ public:
               arrPub->push_back(uwu);
 
            }
-        }
+    }
 
     void findWord(QGridLayout * lay, string KeyWord){
         vectoFind = new vector<Publicacion>();

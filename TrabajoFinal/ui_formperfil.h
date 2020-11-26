@@ -12,6 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QWidget>
 
@@ -31,12 +34,17 @@ public:
     QLabel *label_3;
     QScrollArea *scrollArea_3;
     QWidget *scrollAreaWidgetContents_3;
+    QRadioButton *radioButton;
+    QRadioButton *radioButton_2;
+    QRadioButton *radioButton_3;
+    QLineEdit *lineEdit;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *FormPerfil)
     {
         if (FormPerfil->objectName().isEmpty())
             FormPerfil->setObjectName(QString::fromUtf8("FormPerfil"));
-        FormPerfil->resize(911, 840);
+        FormPerfil->resize(913, 875);
         label = new QLabel(FormPerfil);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(330, 20, 201, 71));
@@ -49,11 +57,11 @@ public:
         lbl_mail->setGeometry(QRect(650, 160, 171, 21));
         scrollArea = new QScrollArea(FormPerfil);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setGeometry(QRect(10, 220, 521, 591));
+        scrollArea->setGeometry(QRect(10, 310, 521, 541));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 519, 589));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 519, 539));
         scrollArea->setWidget(scrollAreaWidgetContents);
         label_2 = new QLabel(FormPerfil);
         label_2->setObjectName(QString::fromUtf8("label_2"));
@@ -77,6 +85,22 @@ public:
         scrollAreaWidgetContents_3->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_3"));
         scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 269, 209));
         scrollArea_3->setWidget(scrollAreaWidgetContents_3);
+        radioButton = new QRadioButton(FormPerfil);
+        radioButton->setObjectName(QString::fromUtf8("radioButton"));
+        radioButton->setGeometry(QRect(30, 190, 84, 19));
+        radioButton_2 = new QRadioButton(FormPerfil);
+        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        radioButton_2->setGeometry(QRect(30, 220, 121, 19));
+        radioButton_3 = new QRadioButton(FormPerfil);
+        radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
+        radioButton_3->setGeometry(QRect(30, 250, 121, 19));
+        lineEdit = new QLineEdit(FormPerfil);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setGeometry(QRect(160, 210, 391, 41));
+        lineEdit->setAlignment(Qt::AlignCenter);
+        pushButton = new QPushButton(FormPerfil);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(300, 260, 131, 31));
 
         retranslateUi(FormPerfil);
 
@@ -91,6 +115,10 @@ public:
         lbl_mail->setText(QCoreApplication::translate("FormPerfil", "TextLabel", nullptr));
         label_2->setText(QCoreApplication::translate("FormPerfil", "Seguidores :", nullptr));
         label_3->setText(QCoreApplication::translate("FormPerfil", "Seguidos :", nullptr));
+        radioButton->setText(QCoreApplication::translate("FormPerfil", "M\303\241s P\303\263pular", nullptr));
+        radioButton_2->setText(QCoreApplication::translate("FormPerfil", "Fecha Ascendente", nullptr));
+        radioButton_3->setText(QCoreApplication::translate("FormPerfil", "Fecha Descendente", nullptr));
+        pushButton->setText(QCoreApplication::translate("FormPerfil", "Publicar", nullptr));
     } // retranslateUi
 
 };

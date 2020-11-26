@@ -44,6 +44,10 @@ public:
         return arreglo[hash3(form)].Modoru(form);
     }
 
+    int getIdPersona(string form){
+        return arreglo[hash3(form)].Modoru(form)->getNro();
+    }
+
 
 
       void hasheabilador(Lista<User> arreglo[]){
