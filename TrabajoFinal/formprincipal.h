@@ -5,6 +5,7 @@
 #include "Lista.h"
 #include "logeador.h"
 #include "User.h"
+#include <QLabel>
 #include "lectorPub.h"
 #include "busquedaBinariaUsuarios.h"
 #include "Graficador.h"
@@ -23,11 +24,18 @@ public:
 private slots:
     void on_ButtonPerfil_clicked();
 
+    void on_radioButton_3_clicked();
+
+    void on_radioButton_2_clicked();
+
+    void on_radioButton_clicked();
+
 private:
     Ui::FormPrincipal *ui;
     lector *lec;
     bs<User>*search;
     Graphics* grafica;
+    QGridLayout * lay;
 
 };
 

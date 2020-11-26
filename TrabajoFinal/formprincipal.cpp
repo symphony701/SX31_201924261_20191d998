@@ -19,8 +19,8 @@ FormPrincipal::FormPrincipal(QWidget *parent) :
     ui->setupUi(this);
     grafica = new Graphics();
 
-    QGridLayout * lay = new QGridLayout(this);
-    grafica->dibujarFechaPos(lay);
+    lay = new QGridLayout(this);
+    grafica->dibujarInicio(lay);
 
     ui->scrollAreaWidgetContents_3->setLayout(lay);
 
@@ -49,4 +49,42 @@ void FormPrincipal::on_ButtonPerfil_clicked()
 
 
 
+}
+
+void FormPrincipal::on_radioButton_3_clicked()
+{
+
+
+
+
+        QWidget *variable = ui->scrollPubs->widget();
+        if(variable){variable->deleteLater();}
+        QGridLayout * lay = new QGridLayout();
+        grafica->dibujarLikes(lay);
+        QWidget *areaVisible= new QWidget();
+        areaVisible->setLayout(lay);
+        ui->scrollPubs->setWidget(areaVisible);
+
+}
+
+void FormPrincipal::on_radioButton_2_clicked()
+{
+        QWidget *variable = ui->scrollPubs->widget();
+        if(variable){variable->deleteLater();}
+        QGridLayout * lay = new QGridLayout();
+        grafica->dibujarFechaPos(lay);
+        QWidget *areaVisible= new QWidget();
+        areaVisible->setLayout(lay);
+        ui->scrollPubs->setWidget(areaVisible);
+}
+
+void FormPrincipal::on_radioButton_clicked()
+{
+        QWidget *variable = ui->scrollPubs->widget();
+        if(variable){variable->deleteLater();}
+        QGridLayout * lay = new QGridLayout();
+        grafica->dibujarFechaNeg(lay);
+        QWidget *areaVisible= new QWidget();
+        areaVisible->setLayout(lay);
+        ui->scrollPubs->setWidget(areaVisible);
 }

@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QWidget>
 
@@ -35,6 +36,9 @@ public:
     QPushButton *pushButton_3;
     QLabel *label_15;
     QLabel *label_16;
+    QRadioButton *radioButton;
+    QRadioButton *radioButton_2;
+    QRadioButton *radioButton_3;
 
     void setupUi(QWidget *FormPrincipal)
     {
@@ -55,11 +59,11 @@ public:
         ButtonPerfil->setGeometry(QRect(520, 30, 91, 41));
         scrollPubs = new QScrollArea(FormPrincipal);
         scrollPubs->setObjectName(QString::fromUtf8("scrollPubs"));
-        scrollPubs->setGeometry(QRect(20, 120, 831, 741));
+        scrollPubs->setGeometry(QRect(40, 220, 831, 641));
         scrollPubs->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_3"));
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 829, 739));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 829, 639));
         scrollPubs->setWidget(scrollAreaWidgetContents_3);
         groupBox_3 = new QGroupBox(FormPrincipal);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
@@ -100,6 +104,15 @@ public:
         label_16->setGeometry(QRect(440, 90, 21, 21));
         label_16->setStyleSheet(QString::fromUtf8("color:black;\n"
 "border:none;"));
+        radioButton = new QRadioButton(FormPrincipal);
+        radioButton->setObjectName(QString::fromUtf8("radioButton"));
+        radioButton->setGeometry(QRect(30, 190, 121, 19));
+        radioButton_2 = new QRadioButton(FormPrincipal);
+        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        radioButton_2->setGeometry(QRect(30, 160, 121, 19));
+        radioButton_3 = new QRadioButton(FormPrincipal);
+        radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
+        radioButton_3->setGeometry(QRect(30, 130, 101, 19));
 
         retranslateUi(FormPrincipal);
 
@@ -119,6 +132,9 @@ public:
         pushButton_3->setText(QCoreApplication::translate("FormPrincipal", "SHARE", nullptr));
         label_15->setText(QCoreApplication::translate("FormPrincipal", "15", nullptr));
         label_16->setText(QCoreApplication::translate("FormPrincipal", "3", nullptr));
+        radioButton->setText(QCoreApplication::translate("FormPrincipal", "Fecha Descendente", nullptr));
+        radioButton_2->setText(QCoreApplication::translate("FormPrincipal", "Fecha Ascendente", nullptr));
+        radioButton_3->setText(QCoreApplication::translate("FormPrincipal", "M\303\241s populares", nullptr));
     } // retranslateUi
 
 };
