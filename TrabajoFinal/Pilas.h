@@ -16,45 +16,45 @@
 #include <QGridLayout>
 using namespace std;
 
-template<class T>
+
 struct Node{
-    T *dato;
+    User *dato;
     Node * siguiente;
     int posicion;
 };
 
-template<class T>
+
 class Pila {
 private:
-     Node<T>*pila;
+     Node*pila;
 public:
      Pila(){
           pila=NULL;
      }
      ~Pila(){}
-     void atarashii(T *elem){
-         Node<T> *nuevo_Node=new Node<T>();
+     void atarashii(User *elem){
+         Node *nuevo_Node=new Node();
          nuevo_Node->dato=elem;
 
          nuevo_Node->siguiente = pila;
          pila= nuevo_Node;
      }
-     T miru(){
+     User miru(){
          QString todoElPosteo="";
-         Node<T> *aux;
+         Node *aux;
          aux=pila;
          while (aux!=NULL) {
              //todoElPosteo=todoElPosteo+QString::fromStdString(aux->dato->nick)+": \n"+QString::fromStdString(aux->dato->mail)+": "+QString::number(aux->dato->nro)+"\n\n";
             // qDebug()<<aux->dato->nick;
              aux=aux->siguiente;
          }
-        return todoElPosteo;
+       // return todoElPosteo;
      }
 
 
      void Shiranai( QPushButton *follow[],QGridLayout * lay){
          int cont=0;
-         Node<T> *aux;
+         Node *aux;
          aux=pila;
          while (aux!=NULL) {
              follow[cont] = new QPushButton(QString::fromStdString(aux->dato->getNick()));

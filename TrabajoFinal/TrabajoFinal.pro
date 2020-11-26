@@ -12,6 +12,7 @@ SOURCES += \
     error.cpp \
     formperfil.cpp \
     formprincipal.cpp \
+    formregister.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -27,16 +28,19 @@ HEADERS += \
     error.h \
     formperfil.h \
     formprincipal.h \
+    formregister.h \
     lectorPub.h \
     logeador.h \
     mainwindow.h \
-    orderPubs.h
+    orderPubs.h \
+    register.h
 
 FORMS += \
     FormError.ui \
     error.ui \
     formperfil.ui \
     formprincipal.ui \
+    formregister.ui \
     mainwindow.ui
 
 # Default rules for deployment.

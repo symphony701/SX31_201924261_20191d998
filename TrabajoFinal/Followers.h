@@ -13,8 +13,8 @@
 #include <QPushButton>
 
 class Follow{
-    Pila<User>* seguidores;
-    Pila<User>* seguidos;
+    Pila* seguidores;
+    Pila* seguidos;
     bs<User> * usuarios;
     int cantidadSeguidores;
     int cantidadSeguidos;
@@ -23,9 +23,9 @@ public:
         cantidadSeguidores=0;
         cantidadSeguidos=0;
 
-        seguidores = new Pila<User>();
+        seguidores = new Pila();
 
-        seguidos = new Pila<User>();
+        seguidos = new Pila();
         usuarios = new bs<User>();
         leer(Persona);
     }
@@ -56,16 +56,14 @@ public:
     int getNroSeguidores(){return cantidadSeguidores;}
     int getNroSeguidos(){return cantidadSeguidos;}
 
-    void dibujarSeguidos(QGridLayout * lay){
-        QPushButton *follow[cantidadSeguidos];
+    void dibujarSeguidos(QGridLayout * lay,QWidget *parent, QPushButton * follow[]){
         seguidos->Shiranai(follow,lay);
 
     }
 
-    void dibujarSeguidores(QGridLayout * lay2){
-             qDebug()<<cantidadSeguidores;
-         QPushButton *sad[cantidadSeguidores];
-         seguidores->Shiranai(sad,lay2);
+    void dibujarSeguidores(QGridLayout * lay2,QWidget *parent, QPushButton * follow[]){
+
+         seguidores->Shiranai(follow,lay2);
         // qDebug()<<getNroSeguidores();
 
     }

@@ -1,38 +1,149 @@
 #pragma once
 #include <iostream>
-#include "User.h"
+#include "Publi.h"
+#include <QWidget>
+#include "lectorPub.h"
+#include "busquedaBinariaUsuarios.h"
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QPushButton>
+#include <vector>
 
 using namespace std;
 
-template<class T>
-struct Nodo{
-    T *Elemento;
-    Nodo *der;
-    Nodo *izq;
+
+struct Hoja{
+    Publicacion Elemento;
+    Hoja *der;
+    Hoja *izq;
    // int posicion;
 };
-/*
+
 template<class T>
 class Tree{
-    Nodo<User> *arbol=NULL;
-public:
-    Nodo *crearNodo(T Persona){
-        Nodo<User> *nuevo_nodo= new Nodo<User>();
-        nuevo_nodo->Elemento = Persona;
-        nuevo_nodo->der = NULL;
-        nuevo_nodo->izq = NULL;
+    Hoja *arbol=NULL;
+    vector<Publicacion> *arreglo;
 
-        return nuevo_nodo;
+
+public:
+    Tree(){
+        arreglo = new vector<Publicacion>();
+    }
+
+    Hoja *crearHoja(Publicacion Item){
+        Hoja *nuevo_Hoja= new Hoja();
+        nuevo_Hoja->Elemento = Item;
+        nuevo_Hoja->der = NULL;
+        nuevo_Hoja->izq = NULL;
+
+        return nuevo_Hoja;
 
     }
 
-    void insertarNodo(Nodo *&arbol, T Persona){
-        if(arbol== NULL){
-            Nodo<User> *nuevo_nodo = crearNodo(Persona);
-            arbol = nuevo_nodo;
-        }else{
+    Hoja* getRaiz(){return arbol;}
 
+    void insertarHojaFechaPos(Hoja *&arbol, Publicacion Item){
+        if(arbol== NULL){
+            Hoja *nuevo_Hoja = crearHoja(Item);
+            arbol = nuevo_Hoja;
+        }else{
+             int valorRaiz = arbol->Elemento.getFecha2();
+
+             if(Item.getFecha2()<valorRaiz){
+                 insertarHojaFechaPos(arbol->izq,Item);
+             }else{
+                 insertarHojaFechaPos(arbol->der,Item);
+             }
         }
     }
+
+
+    void insertarHojaFechaNeg(Hoja *&arbol, Publicacion Item){
+        if(arbol== NULL){
+            Hoja *nuevo_Hoja = crearHoja(Item);
+            arbol = nuevo_Hoja;
+        }else{
+             int valorRaiz = arbol->Elemento.getFecha2();
+             if(Item.getFecha2()>valorRaiz){
+                 insertarHojaFechaNeg(arbol->izq,Item);
+             }else{
+                 insertarHojaFechaNeg(arbol->der,Item);
+             }
+        }
+    }
+
+
+
+
+    void insertarHojaLikes(Hoja *&arbol, Publicacion Item){
+        if(arbol== NULL){
+            Hoja *nuevo_Hoja = crearHoja(Item);
+            arbol = nuevo_Hoja;
+        }else{
+             int valorRaiz = arbol->Elemento.getLikes();
+             if(Item.getLikes()>valorRaiz){
+                 insertarHojaLikes(arbol->izq,Item);
+             }else{
+                 insertarHojaLikes(arbol->der,Item);
+             }
+        }
+    }
+
+
+    void insertHojaFechaNeg(Publicacion owo){
+        insertarHojaFechaNeg(arbol,owo);
+    }
+
+    void insertHojaFechaPos(Publicacion owo){
+        insertarHojaFechaPos(arbol,owo);
+    }
+
+    void insertHojaLike(Publicacion owo){
+        insertarHojaLikes(arbol,owo);
+    }
+
+
+
+
+
+    void inOrden(Hoja *arbol){
+        if(arbol==NULL){
+            return;
+        }else{
+            inOrden(arbol->izq);
+            //cout arbol.dato;
+            //-------------------------EXPERIMENTAL---------
+
+
+            arreglo->push_back(arbol->Elemento);
+
+
+            //--------------------uwu---------------
+            inOrden(arbol->der);
+        }
+    }
+
+    void wakarimasen(){
+        inOrden(arbol);
+
+    }
+
+
+    Publicacion  getPublicacion(int i){
+        return arreglo->at(i);
+    }
+
+
+
+
+
+
+
+
+
+
 };
-*/
+

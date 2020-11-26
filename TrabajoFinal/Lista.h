@@ -76,6 +76,21 @@ public:
 
     }
 
+    bool kenshouLog(string nick, string mail){
+        Nodo<T> *actual=new Nodo<T>();
+        actual=lista;
+        bool val=false;
+        while (actual!=NULL) {
+            if((actual->Elemento->getNick()==nick)&&(actual->Elemento->getMail()==mail)){
+                val=true;
+            }
+
+            actual=actual->siguiente;
+
+        }
+          return val;
+    }
+
     User *Modoru(string form){
         Nodo<T> *actual=new Nodo<T>();
         actual=lista;

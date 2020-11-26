@@ -20,7 +20,7 @@ FormPrincipal::FormPrincipal(QWidget *parent) :
     grafica = new Graphics();
 
     QGridLayout * lay = new QGridLayout(this);
-    grafica->dibujarInicio(lay);
+    grafica->dibujarFechaPos(lay);
 
     ui->scrollAreaWidgetContents_3->setLayout(lay);
 

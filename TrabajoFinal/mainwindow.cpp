@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "formprincipal.h"
 #include "error.h"
+#include "register.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,7 +20,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_login_clicked()
 {
-    if(log->validadorUsuario(ui->lineID->text().toStdString())){
+
+    if(log->validadorLogin(ui->lineID->text().toStdString(),ui->lineID_2->text().toStdString())){
         FormPrincipal* principalSocial= new FormPrincipal(nullptr);
         principalSocial->showMaximized();
     }else{
@@ -27,4 +29,18 @@ void MainWindow::on_login_clicked()
         formerror->show();
 
     }
+}
+
+void MainWindow::on_lineMail_cursorPositionChanged(int arg1, int arg2)
+{
+
+}
+
+void MainWindow::on_login_2_clicked()
+{
+    sing= new reg();
+    sing->Escritor(ui->lineID_3->text().toStdString(),ui->lineID_4->text().toStdString());
+    log=new login();
+    ui->lineID_3->setText("User");
+    ui->lineID_4->setText("Mail");
 }

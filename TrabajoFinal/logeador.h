@@ -68,4 +68,12 @@ public:
               return true;
           }else{return false;}
       }
+
+      bool validadorLogin(string usuario,string mail){
+          int posicion = hash3(usuario);
+          if(arreglo[posicion].kenshouLog(usuario,mail)){
+              return true;
+          }else{return false;}
+      }
+
 };

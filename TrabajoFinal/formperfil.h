@@ -14,8 +14,10 @@ class FormPerfil : public QWidget
     Q_OBJECT
 
 public:
-    explicit FormPerfil(QWidget *parent = nullptr,User *Persona=nullptr);
+    explicit FormPerfil(QWidget *parent = nullptr,User *Persona=nullptr,string persona="");
+
     ~FormPerfil();
+    void Rinku();
 
 private:
     Ui::FormPerfil *ui;
