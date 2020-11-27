@@ -39,6 +39,7 @@ public:
     QRadioButton *radioButton_3;
     QLineEdit *lineEdit;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
 
     void setupUi(QWidget *FormPerfil)
     {
@@ -101,6 +102,9 @@ public:
         pushButton = new QPushButton(FormPerfil);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(300, 260, 131, 31));
+        pushButton_2 = new QPushButton(FormPerfil);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(680, 100, 80, 21));
 
         retranslateUi(FormPerfil);
 
@@ -119,6 +123,7 @@ public:
         radioButton_2->setText(QCoreApplication::translate("FormPerfil", "Fecha Ascendente", nullptr));
         radioButton_3->setText(QCoreApplication::translate("FormPerfil", "Fecha Descendente", nullptr));
         pushButton->setText(QCoreApplication::translate("FormPerfil", "Publicar", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("FormPerfil", "Seguir", nullptr));
     } // retranslateUi
 
 };

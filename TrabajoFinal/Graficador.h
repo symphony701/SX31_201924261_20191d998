@@ -9,7 +9,7 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QObject>
-
+#include "comentarios.h"
 
 
 class Graphics{
@@ -53,6 +53,11 @@ public:
                BLike->setText(QString::number(lec->getPubFechaAs(i).getLikes()+1) +" Like");
             });
             QPushButton *BComment = new QPushButton("Comment");
+            QObject::connect(BComment, &QPushButton::clicked,[=](){
+
+                Comentarios * comment = new Comentarios(nullptr,lec->getPubFechaAs(i).getIdPub());
+              comment->show();
+            });
 
             vbox->addWidget(BLike);
             vbox->addWidget(BComment);
@@ -83,8 +88,8 @@ public:
             QLabel *conten= new QLabel;
             QLabel *content2= new QLabel;
             QLabel *persona = new QLabel;
-
-            persona->setText(QString::fromStdString(search->returnBs(i+1)->getNick())+": ");
+            //string paciencia = search->returnBs(i+1)->getNick()+": ";
+            //persona->setText(QString::fromStdString(paciencia));
 
             conten->setText(QString::fromStdString(lec->getPublicacion(i).getContent()));
             content2->setText("#"+QString::fromStdString(lec->getPublicacion(i).getContent2()));
@@ -94,9 +99,14 @@ public:
             QPushButton *BLike = new QPushButton(QString::number(lec->getPublicacion(i).getLikes()) +" Like");
             QObject::connect(BLike, &QPushButton::clicked,[=](){
 
-               BLike->setText(QString::number(lec->getPubFechaAs(i).getLikes()+1) +" Like");
+               BLike->setText(QString::number(lec->getPublicacion(i).getLikes()+1) +" Like");
             });
             QPushButton *BComment = new QPushButton("Comment");
+            QObject::connect(BComment, &QPushButton::clicked,[=](){
+
+                Comentarios * comment = new Comentarios(nullptr,lec->getPublicacion(i).getIdPub());
+              comment->show();
+            });
 
             vbox->addWidget(BLike);
             vbox->addWidget(BComment);
@@ -141,6 +151,11 @@ public:
                BLike->setText(QString::number(lec->getPubFechaAs(i).getLikes()+1) +" Like");
             });
             QPushButton *BComment = new QPushButton("Comment");
+            QObject::connect(BComment, &QPushButton::clicked,[=](){
+
+                Comentarios * comment = new Comentarios(nullptr,lec->getPubFechaDes(i).getIdPub());
+              comment->show();
+            });
 
             vbox->addWidget(BLike);
             vbox->addWidget(BComment);
@@ -186,6 +201,12 @@ public:
                BLike->setText(QString::number(lec->getPubFechaAs(i).getLikes()+1) +" Like");
             });
             QPushButton *BComment = new QPushButton("Comment");
+            QObject::connect(BComment, &QPushButton::clicked,[=](){
+
+              Comentarios * comment = new Comentarios(nullptr,lec->getPubLikes(i).getIdPub());
+              comment->show();
+
+            });
 
             vbox->addWidget(BLike);
             vbox->addWidget(BComment);

@@ -16,6 +16,7 @@
 #include "busquedaBinariaUsuarios.h"
 #include "User.h"
 #include "logeador.h"
+#include "comentarios.h"
 
 using namespace std;
 
@@ -239,6 +240,11 @@ public:
                    BLike->setText(QString::number(vectoFind->at(i).getLikes()+1) +" Like");
                 });
                 QPushButton *BComment = new QPushButton("Comment");
+                QObject::connect(BComment, &QPushButton::clicked,[=](){
+
+                    Comentarios * comment = new Comentarios(nullptr,vectoFind->at(i).getIdPub());
+                  comment->show();
+                });
 
                 vbox->addWidget(BLike);
                 vbox->addWidget(BComment);

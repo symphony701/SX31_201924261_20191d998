@@ -23,7 +23,7 @@ void MainWindow::on_login_clicked()
 
     if(log->validadorLogin(ui->lineID->text().toStdString(),ui->lineID_2->text().toStdString())){
 
-        FormPrincipal* principalSocial= new FormPrincipal(nullptr/*,log->getIdPersona(ui->lineID->text().toStdString()),ui->lineID->text().toStdString()*/);
+        FormPrincipal* principalSocial= new FormPrincipal(nullptr,log->getIdPersona(ui->lineID->text().toStdString()),ui->lineID->text().toStdString());
 
         principalSocial->showMaximized();
     }else{

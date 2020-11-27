@@ -10,8 +10,8 @@ private:
     int nro;
     string fecha;
 public:
-    User(string nick,string mail,int nro,string fecha){
-        this->nick=nick;
+    User(string nock,string mail,int nro,string fecha){
+        nick=nock;
         this->mail=mail;
         this->nro=nro;
         this->fecha=fecha;

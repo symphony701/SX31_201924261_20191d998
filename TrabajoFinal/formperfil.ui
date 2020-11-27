@@ -215,6 +215,19 @@
     <string>Publicar</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>100</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Seguir</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

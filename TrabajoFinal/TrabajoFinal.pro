@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    comentarios.cpp \
     error.cpp \
     formperfil.cpp \
     formprincipal.cpp \
@@ -25,10 +26,12 @@ HEADERS += \
     Publi.h \
     User.h \
     busquedaBinariaUsuarios.h \
+    comentarios.h \
     error.h \
     formperfil.h \
     formprincipal.h \
     formregister.h \
+    lectorComentarios.h \
     lectorPub.h \
     logeador.h \
     mainwindow.h \
@@ -37,6 +40,7 @@ HEADERS += \
 
 FORMS += \
     FormError.ui \
+    comentarios.ui \
     error.ui \
     formperfil.ui \
     formprincipal.ui \

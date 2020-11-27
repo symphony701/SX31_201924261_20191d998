@@ -20,8 +20,11 @@ class Follow{
     int cantidadSeguidos;
     bool valseguidor=false;
     int usuarioLogueado;
+    string aux2;
+    User*Personita;
 public:
     Follow(User*Persona,int IDUSUARIO){
+        Personita= Persona;
         usuarioLogueado= IDUSUARIO;
         cantidadSeguidores=0;
         cantidadSeguidos=0;
@@ -60,6 +63,27 @@ public:
 
     }
 
+    void leer2(){
+        string aux;
+        aux2="";
+         ifstream dataFollow("followers.txt");
+         while(getline(dataFollow,aux,'\n')){
+             aux2=aux2+aux+'\n';
+         }
+
+
+
+    }
+
+    void escribir(){
+         ofstream ofs ("followers.txt",ofstream::out);
+         ofs << aux2;
+         ofs <<to_string(usuarioLogueado)+','+to_string(Personita->getNro());
+         ofs.close();
+         valseguidor= true;
+
+    }
+
     bool esSeguidor(){
         return valseguidor;
     }
@@ -78,4 +102,5 @@ public:
         // qDebug()<<getNroSeguidores();
 
     }
+
 };
