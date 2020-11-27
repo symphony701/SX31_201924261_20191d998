@@ -22,9 +22,11 @@ using namespace std;
 class reg{
   private:
     vector<User> registros;
+    string escritura;
+    int contadorPubs;
 public:
     reg(){
-        Lector();
+
     }
 
     void Lector(){
@@ -64,6 +66,48 @@ public:
     }
 
 
+    void lectorPublicaciones(){
+        escritura = "";
+        contadorPubs=0;
+        string idPub,idUser,likes;
+        string content,fecha,content2;
+        string aux;
+
+        ifstream dataUser("publications.tsv");
+          while(getline(dataUser,aux,'\n')){
+              contadorPubs++;
+              /*getline(dataUser,idPub,'\t');
+              getline(dataUser,idUser,'\t');
+              getline(dataUser,content,'\t');
+              getline(dataUser,content2,'\t');
+              getline(dataUser,fecha,'\t');
+              getline(dataUser,likes);*/
+              escritura =escritura +aux+'\n';
+
+
+           }
+          contadorPubs++;
+    }
+
+    void escritorPublicaciones(string idPublicador,string contenido,string contenido2,int likes=0){
+        //string cantidadDePubs;
+       // ifstream data("nropubs.txt");
+       // getline(data,cantidadDePubs);
+      //   int nroPub= atoi(cantidadDePubs.c_str());
+
+        ofstream ofs ("publications.tsv",ofstream::out);
+        ofs<<escritura;
+        auto t = std::time(nullptr);
+        auto tm = *std::localtime(&t);
+
+        std::ostringstream oss;
+        oss << std::put_time(&tm, "%Y-%m-%d");
+        auto str = oss.str();
+        string actual=to_string(contadorPubs)+'\t'+to_string(contadorPubs)+'\t'+idPublicador+'\t'+contenido+'\t'+contenido2+'\t'+str+'\t'+to_string(likes)+'\n';
+        ofs<<actual;
+        ofs.close();
+
+    }
 
 
 

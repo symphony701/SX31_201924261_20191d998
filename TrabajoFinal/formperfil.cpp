@@ -9,23 +9,29 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 #include "User.h"
-FormPerfil::FormPerfil(QWidget *parent, User *Persona,string persona) :
+#include "register.h"
+
+FormPerfil::FormPerfil(QWidget *parent, User *Persona,string persona,int IDUSUARIO) :
     QWidget(parent),
     ui(new Ui::FormPerfil)
 {
+    nickActual=persona;
+    this->IDUSER=IDUSUARIO;
     ui->setupUi(this);
+    this->Personita=Persona;
 
-    grafica = new Graphics(Persona->getNick());
+    grafica = new Graphics(Personita->getNick());
 
     lay = new QGridLayout(this);
     grafica->dibujarInicio(lay);
 
-    //ui->scrollAreaWidgetContents_3->setLayout(lay);
+
+
     ui->scrollAreaWidgetContents->setLayout(lay);
 
 
 
-    followers= new Follow(Persona);
+    followers= new Follow(Persona,IDUSUARIO);
 
     ui->label->setText(QString::fromStdString(Persona->getNick()));
     ui->lbl_mail->setText("Email: "+(QString::fromStdString(Persona->getMail())));
@@ -93,4 +99,17 @@ void FormPerfil::on_radioButton_3_clicked()
     QWidget *areaVisible= new QWidget();
     areaVisible->setLayout(lay);
     ui->scrollArea->setWidget(areaVisible);
+}
+
+void FormPerfil::on_pushButton_clicked()
+{
+    if(followers->esSeguidor()==true){
+        registroPubli= new reg();
+        registroPubli->lectorPublicaciones();
+        registroPubli->escritorPublicaciones(to_string(Personita->getNro()),ui->lineEdit->text().toStdString(),nickActual);
+        ui->lineEdit->setText("");
+       // ui->lineEdit_2->setText("");
+        grafica = new Graphics(Personita->getNick());
+        FormPerfil::on_radioButton_3_clicked();
+    }
 }

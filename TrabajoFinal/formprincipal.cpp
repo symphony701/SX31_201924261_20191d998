@@ -12,10 +12,13 @@
 #include "Graficador.h"
 #include "logeador.h"
 #include "error.h"
-FormPrincipal::FormPrincipal(QWidget *parent) :
+#include "register.h"
+FormPrincipal::FormPrincipal(QWidget *parent,int IDUSER,string nickActual) :
     QWidget(parent),
     ui(new Ui::FormPrincipal)
 {
+    this->IDUSER= IDUSER;
+    this->nickActual=nickActual;
     ui->setupUi(this);
     grafica = new Graphics();
 
@@ -38,7 +41,7 @@ void FormPrincipal::on_ButtonPerfil_clicked()
     login *log = new login();
     if(log->validadorUsuario(ui->lineID->text().toStdString())){
         User *person = log->persona(ui->lineID->text().toStdString());
-        FormPerfil *perfil=new FormPerfil(nullptr,person);
+        FormPerfil *perfil=new FormPerfil(nullptr,person,nickActual,IDUSER);
         perfil->show();
     }else{
         Error* formerror= new Error();
@@ -50,6 +53,8 @@ void FormPrincipal::on_ButtonPerfil_clicked()
 
 
 }
+
+//--------radio buttons-----
 
 void FormPrincipal::on_radioButton_3_clicked()
 {
@@ -89,6 +94,8 @@ void FormPrincipal::on_radioButton_clicked()
         ui->scrollPubs->setWidget(areaVisible);
 }
 
+//----Buscar por palabra----
+
 void FormPrincipal::on_ButtonPerfil_2_clicked()
 {
     QWidget *variable = ui->scrollPubs->widget();
@@ -98,4 +105,18 @@ void FormPrincipal::on_ButtonPerfil_2_clicked()
     QWidget *areaVisible= new QWidget();
     areaVisible->setLayout(lay);
     ui->scrollPubs->setWidget(areaVisible);
+}
+
+
+void FormPrincipal::on_pushButton_clicked()
+{
+    registroPubli= new reg();
+    registroPubli->lectorPublicaciones();
+    registroPubli->escritorPublicaciones(to_string(IDUSER),ui->lineEdit->text().toStdString(),ui->lineEdit_2->text().toStdString());
+    ui->lineEdit->setText("");
+    ui->lineEdit_2->setText("");
+    grafica = new Graphics();
+    FormPrincipal::on_radioButton_clicked();
+
+
 }

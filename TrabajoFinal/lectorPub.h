@@ -234,6 +234,10 @@ public:
                 vbox->addWidget(conten);
                 vbox->addWidget(content2);
                 QPushButton *BLike = new QPushButton(QString::number(vectoFind->at(i).getLikes()) +" Like");
+                QObject::connect(BLike, &QPushButton::clicked,[=](){
+
+                   BLike->setText(QString::number(vectoFind->at(i).getLikes()+1) +" Like");
+                });
                 QPushButton *BComment = new QPushButton("Comment");
 
                 vbox->addWidget(BLike);

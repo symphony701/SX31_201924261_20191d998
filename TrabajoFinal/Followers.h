@@ -18,8 +18,11 @@ class Follow{
     bs<User> * usuarios;
     int cantidadSeguidores;
     int cantidadSeguidos;
+    bool valseguidor=false;
+    int usuarioLogueado;
 public:
-    Follow(User*Persona){
+    Follow(User*Persona,int IDUSUARIO){
+        usuarioLogueado= IDUSUARIO;
         cantidadSeguidores=0;
         cantidadSeguidos=0;
 
@@ -43,6 +46,10 @@ public:
                 cantidadSeguidores++;
             }
 
+            if(atoi(idf.c_str())==usuarioLogueado){
+                valseguidor=true;
+            }
+
             //seguidos
             if(atoi(idu.c_str())==actual->getNro()){
                 seguidos->atarashii(usuarios->returnBs(atoi(idf.c_str())));
@@ -51,6 +58,10 @@ public:
 
         }
 
+    }
+
+    bool esSeguidor(){
+        return valseguidor;
     }
 
     int getNroSeguidores(){return cantidadSeguidores;}

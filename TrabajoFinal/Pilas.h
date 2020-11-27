@@ -60,6 +60,7 @@ public:
              follow[cont] = new QPushButton(QString::fromStdString(aux->dato->getNick()));
                 // qDebug()<<"LLegue aqui";
             // qDebug()<<QString::fromStdString(aux->dato->getNick());
+
              lay->addWidget(follow[cont]);
              aux=aux->siguiente;
          }

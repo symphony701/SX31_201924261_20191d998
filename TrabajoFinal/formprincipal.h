@@ -9,6 +9,7 @@
 #include "lectorPub.h"
 #include "busquedaBinariaUsuarios.h"
 #include "Graficador.h"
+#include "register.h"
 namespace Ui {
 class FormPrincipal;
 }
@@ -18,7 +19,7 @@ class FormPrincipal : public QWidget
     Q_OBJECT
 
 public:
-    explicit FormPrincipal(QWidget *parent = nullptr);
+    explicit FormPrincipal(QWidget *parent = nullptr,int IDUSER=0,string nickActual="");
     ~FormPrincipal();
 
 private slots:
@@ -32,12 +33,17 @@ private slots:
 
     void on_ButtonPerfil_2_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::FormPrincipal *ui;
     lector *lec;
     bs<User>*search;
     Graphics* grafica;
     QGridLayout * lay;
+    reg *registroPubli;
+    int IDUSER;
+    string nickActual;
 
 };
 
